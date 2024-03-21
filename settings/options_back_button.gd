@@ -2,7 +2,7 @@ extends Button
 
 
 @onready var main_menu = %MainMenu
-@onready var settings = %Settings
+@onready var settings = %SettingsMargin
 
 
 ## Called when the Back button is pressed on the Options screen.

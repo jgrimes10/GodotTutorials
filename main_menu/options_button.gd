@@ -1,7 +1,7 @@
 extends Button
 
 
-@onready var settings = %Settings
+@onready var settings = %SettingsMargin
 
 ## Called when the Options button is pressed on the Main Menu.
 func _on_pressed() -> void:
