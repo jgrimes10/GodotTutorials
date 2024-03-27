@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhnguir34roed"]
+[gd_scene load_steps=5 format=3 uid="uid://bhnguir34roed"]
 
 [ext_resource type="Script" path="res://bullet_heaven/player.gd" id="1_i0icp"]
 [ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://bullet_heaven/characters/happy_boo/happy_boo.tscn" id="1_kdubo"]
+[ext_resource type="PackedScene" uid="uid://bp2f1l4fyfp2p" path="res://bullet_heaven/pistol/gun.tscn" id="3_uk0if"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2vyfj"]
 radius = 30.0
@@ -14,3 +15,9 @@ unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2vyfj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Gun" parent="." instance=ExtResource("3_uk0if")]
+position = Vector2(0, -38)

@@ -1,10 +1,17 @@
 extends CharacterBody2D
 
-const MAX_PLAYER_SPEED: float = 600.0
-const ACCELERATION: float = 1500
+const BASE_MAX_SPEED: float = 400.0
+const BASE_MAX_HEALTH: float = 100.0
+const ACCELERATION: float = 1200
 const FRICTION: float = 1000
 
 var input: Vector2 = Vector2.ZERO
+var current_health: float
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	current_health = BASE_MAX_HEALTH
 
 
 # Called every physics tick. 'delta' is the elapsed time since the previous frame.
@@ -40,7 +47,7 @@ func _player_movement(delta: float) -> void:
 		# Move the player.
 		velocity += (input * ACCELERATION * delta)
 		# Cap the player's speed to the max.
-		velocity = velocity.limit_length(MAX_PLAYER_SPEED)
+		velocity = velocity.limit_length(BASE_MAX_SPEED)
 	
 	# Apply the movement to the player.
 	move_and_slide()

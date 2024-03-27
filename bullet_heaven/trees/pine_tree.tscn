@@ -1,13 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqbwhe03x6yt7"]
+[gd_scene load_steps=4 format=3 uid="uid://cqbwhe03x6yt7"]
 
 [ext_resource type="Texture2D" uid="uid://caqfk2xng5v5u" path="res://bullet_heaven/trees/pine_tree.png" id="1_5f4ld"]
+[ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://bullet_heaven/characters/ground_shadow.png" id="1_bu8nn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xo25j"]
 radius = 22.0907
 
 [node name="PineTree" type="StaticBody2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="GroundShadow" type="Sprite2D" parent="."]
+modulate = Color(0.713726, 0.870588, 0.894118, 1)
+position = Vector2(0, 6)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_bu8nn")
+
+[node name="PineTreeSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -58)
 texture = ExtResource("1_5f4ld")
 
