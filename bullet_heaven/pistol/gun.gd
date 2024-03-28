@@ -16,7 +16,6 @@ func _physics_process(_delta: float) -> void:
 	
 	var direction_from_center = get_parent().global_position - global_position
 	var dot_product = Vector2.RIGHT.dot(direction_from_center)
-	print(dot_product)
 	if rotation_degrees:
 		%Pistol.flip_v = true
 	else:

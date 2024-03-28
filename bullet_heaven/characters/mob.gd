@@ -7,6 +7,7 @@ const SMOKE_SCENE: PackedScene = preload("res://bullet_heaven/smoke_explosion/sm
 
 @export var max_speed: float = 100.0
 @export var max_health: float = 100.0
+@export var damage_amount: float = 0.5
 
 var current_health: float
 
@@ -47,11 +48,16 @@ func take_damage(amount: float) -> void:
 	# Check if the mob's health is depleted.
 	if current_health <= 0:
 		# Kill the mob.
-		die()
+		_die()
+
+
+## Method to get the amount of damage this mob will do to the player.
+func get_player_damage() -> float:
+	return damage_amount
 
 
 ## Method that handles what happens when the mob dies.
-func die() -> void:
+func _die() -> void:
 	# Delete the instance.
 	queue_free()
 	
